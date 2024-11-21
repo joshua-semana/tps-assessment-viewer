@@ -31,9 +31,9 @@
             label1 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            txtStudentNumber = new TextBox();
-            txtPassword = new TextBox();
-            btnLogin = new Button();
+            TxtStudentNumber = new TextBox();
+            TxtPassword = new TextBox();
+            BtnLogin = new Button();
             label3 = new Label();
             label4 = new Label();
             pictureBox2 = new PictureBox();
@@ -81,42 +81,44 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // txtStudentNumber
+            // TxtStudentNumber
             // 
-            txtStudentNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtStudentNumber.BorderStyle = BorderStyle.FixedSingle;
-            txtStudentNumber.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtStudentNumber.Location = new Point(150, 456);
-            txtStudentNumber.Margin = new Padding(3, 3, 3, 18);
-            txtStudentNumber.Name = "txtStudentNumber";
-            txtStudentNumber.Size = new Size(300, 39);
-            txtStudentNumber.TabIndex = 0;
+            TxtStudentNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TxtStudentNumber.BorderStyle = BorderStyle.FixedSingle;
+            TxtStudentNumber.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Pixel);
+            TxtStudentNumber.Location = new Point(150, 456);
+            TxtStudentNumber.Margin = new Padding(3, 3, 3, 18);
+            TxtStudentNumber.Name = "TxtStudentNumber";
+            TxtStudentNumber.Size = new Size(300, 39);
+            TxtStudentNumber.TabIndex = 0;
             // 
-            // txtPassword
+            // TxtPassword
             // 
-            txtPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtPassword.Location = new Point(150, 545);
-            txtPassword.Margin = new Padding(3, 3, 3, 32);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(300, 39);
-            txtPassword.TabIndex = 1;
+            TxtPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TxtPassword.BorderStyle = BorderStyle.FixedSingle;
+            TxtPassword.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Pixel);
+            TxtPassword.Location = new Point(150, 545);
+            TxtPassword.Margin = new Padding(3, 3, 3, 32);
+            TxtPassword.Name = "TxtPassword";
+            TxtPassword.Size = new Size(300, 39);
+            TxtPassword.TabIndex = 1;
+            TxtPassword.UseSystemPasswordChar = true;
             // 
-            // btnLogin
+            // BtnLogin
             // 
-            btnLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnLogin.BackColor = Color.MidnightBlue;
-            btnLogin.FlatAppearance.BorderColor = Color.MidnightBlue;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Pixel);
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(150, 619);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(300, 40);
-            btnLogin.TabIndex = 2;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            BtnLogin.BackColor = Color.MidnightBlue;
+            BtnLogin.FlatAppearance.BorderColor = Color.MidnightBlue;
+            BtnLogin.FlatStyle = FlatStyle.Flat;
+            BtnLogin.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Pixel);
+            BtnLogin.ForeColor = Color.White;
+            BtnLogin.Location = new Point(150, 619);
+            BtnLogin.Name = "BtnLogin";
+            BtnLogin.Size = new Size(300, 40);
+            BtnLogin.TabIndex = 2;
+            BtnLogin.Text = "Login";
+            BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // label3
             // 
@@ -193,9 +195,9 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(btnLogin);
-            panel1.Controls.Add(txtPassword);
-            panel1.Controls.Add(txtStudentNumber);
+            panel1.Controls.Add(BtnLogin);
+            panel1.Controls.Add(TxtPassword);
+            panel1.Controls.Add(TxtStudentNumber);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1320, 0);
             panel1.Margin = new Padding(0, 3, 3, 3);
@@ -230,9 +232,9 @@
         private Label label1;
         private Label label2;
         private PictureBox pictureBox1;
-        private TextBox txtStudentNumber;
-        private TextBox txtPassword;
-        private Button btnLogin;
+        private TextBox TxtStudentNumber;
+        private TextBox TxtPassword;
+        private Button BtnLogin;
         private Label label3;
         private Label label4;
         private PictureBox pictureBox2;

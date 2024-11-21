@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\SAR.csproj": {}
+    "D:\\Dev\\tps-assessment-viewer\\SAR\\SAR.csproj": {}
   },
   "projects": {
-    "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\SAR.csproj": {
+    "D:\\Dev\\tps-assessment-viewer\\SAR\\SAR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\SAR.csproj",
+        "projectUniqueName": "D:\\Dev\\tps-assessment-viewer\\SAR\\SAR.csproj",
         "projectName": "SAR",
-        "projectPath": "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\SAR.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\obj\\",
+        "projectPath": "D:\\Dev\\tps-assessment-viewer\\SAR\\SAR.csproj",
+        "packagesPath": "C:\\Users\\Joshua Semana\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\tps-assessment-viewer\\SAR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joshua Semana\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,28 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,7 +85,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
