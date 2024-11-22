@@ -11,8 +11,8 @@ using SAR.Data;
 namespace SAR.Migrations
 {
     [DbContext(typeof(Database.Context))]
-    [Migration("20241121201420_StringStudentID")]
-    partial class StringStudentID
+    [Migration("20241122034011_StudentModelChange")]
+    partial class StudentModelChange
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,10 @@ namespace SAR.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
