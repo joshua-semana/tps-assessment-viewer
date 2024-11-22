@@ -1,15 +1,15 @@
-using Microsoft.EntityFrameworkCore;
+using SAR.Views;
 
 namespace SAR
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
         const int ERROR_PROVIDER_ICON_PADDING = 8;
 
-        private static ErrorProvider err = new();
+        private static ErrorProvider errorProvider = new();
         private static List<Control> fieldsLogin = [];
 
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
 
@@ -21,19 +21,19 @@ namespace SAR
             SetErrorIconPaddings(fieldsLogin);
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private void Login()
         {
             ClearErrors(fieldsLogin);
 
             if (string.IsNullOrEmpty(TxtStudentNumber.Text))
             {
-                err.SetError(TxtStudentNumber, "Enter your student number.");
+                SetError(TxtStudentNumber, "Enter student number here.");
                 return;
             }
 
             if (string.IsNullOrEmpty(TxtPassword.Text))
             {
-                err.SetError(TxtPassword, "Enter your password.");
+                SetError(TxtPassword, "Enter your password.");
                 return;
             }
 
@@ -42,52 +42,101 @@ namespace SAR
 
             if (IsAuthorized(studentNumber, password))
             {
-                // Go To Main Page
+                Hide();
+                FrmMain form = new()
+                {
+                    StudentId = studentNumber
+                };
+                form.ShowDialog();
+                Close();
             }
         }
 
         public bool IsAuthorized(string StudentNumber, string Password)
         {
+            List<Control> LoginFields = [
+                TxtStudentNumber,
+                TxtPassword,
+                BtnLogin
+            ];
+
             using Data.Database.Context context = new();
 
-            var account = context.StudentAccounts.Where(sa => sa.StudentId == StudentNumber).FirstOrDefault();
-
-            if (account == null)
+            try
             {
-                err.SetError(TxtStudentNumber, "We can't find this account.");
+                var account = context.StudentAccounts.Where(sa => sa.StudentId == StudentNumber).FirstOrDefault();
+
+                if (account == null)
+                {
+                    SetError(TxtStudentNumber, "We can't find this account.");
+                    return false;
+                }
+
+                if (Password != account.Password)
+                {
+                    SetError(TxtPassword, "Password is incorrect.");
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
                 return false;
             }
-
-            if (Password != account.Password)
-            {
-                err.SetError(TxtPassword, "Password is incorrect.");
-                return false;
-            }
-
-            return true;
         }
 
         // --- UTILITIES ---
 
         private static void SetErrorIconPaddings(List<Control> Fields)
         {
-            foreach (Control Control in Fields)
+            foreach (Control Field in Fields)
             {
-                if (Control as TextBox != null)
+                if (Field as TextBox != null)
                 {
-                    err.SetIconPadding(Control, ERROR_PROVIDER_ICON_PADDING);
+                    errorProvider.SetIconPadding(Field, ERROR_PROVIDER_ICON_PADDING);
                 }
             }
         }
 
         private static void ClearErrors(List<Control> Fields)
         {
-            foreach (Control Control in Fields)
+            foreach (Control Field in Fields)
             {
-                if (Control as TextBox != null)
+                if (Field as TextBox != null)
                 {
-                    err.SetError(Control, "");
+                    SetError(Field, "");
                 }
+            }
+        }
+
+        private static void SetError(Control control, string description = "Something is wrong here.")
+        {
+            errorProvider.SetError(control, description);
+        }
+
+        private void SetEnable(List<Control> Fields, bool EnableStatus)
+        {
+            foreach (Control Field in Fields)
+            {
+                Field.Enabled = EnableStatus;
+            }
+        }
+
+        // --- EVENTS ---
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            Login();
+        }
+
+        private void TxtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                Login();
             }
         }
     }

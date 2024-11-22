@@ -4735,19 +4735,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Joshua Semana\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\tps-assessment-viewer\\SAR\\SAR.csproj",
+      "projectUniqueName": "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\SAR.csproj",
       "projectName": "SAR",
-      "projectPath": "D:\\Dev\\tps-assessment-viewer\\SAR\\SAR.csproj",
-      "packagesPath": "C:\\Users\\Joshua Semana\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\tps-assessment-viewer\\SAR\\obj\\",
+      "projectPath": "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\SAR.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\Softwares\\Programs\\tps-assessment-viewer\\SAR\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Joshua Semana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4818,7 +4818,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

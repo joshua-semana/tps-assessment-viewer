@@ -1,6 +1,6 @@
 ﻿namespace SAR
 {
-    partial class frmLogin
+    partial class FrmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             label1 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
@@ -72,6 +73,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.Building;
             pictureBox1.Location = new Point(0, 34);
             pictureBox1.Margin = new Padding(0);
@@ -103,6 +105,7 @@
             TxtPassword.Size = new Size(300, 39);
             TxtPassword.TabIndex = 1;
             TxtPassword.UseSystemPasswordChar = true;
+            TxtPassword.KeyPress += TxtPassword_KeyPress;
             // 
             // BtnLogin
             // 
@@ -176,6 +179,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Bottom;
             label7.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Pixel);
             label7.Location = new Point(150, 979);
             label7.Margin = new Padding(3, 0, 3, 4);
@@ -205,7 +209,7 @@
             panel1.Size = new Size(600, 1080);
             panel1.TabIndex = 0;
             // 
-            // frmLogin
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -216,9 +220,10 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmLogin";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Student Record Viewer - Login";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
